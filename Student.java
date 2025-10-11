@@ -1,25 +1,24 @@
-package week3;
+package week5.student;
 
-class Student {
-    String name;
-    int rollNumber;
-    double marks;
-    Student(String n, int r, double m) {
-        name= n;
-        rollNumber= r;
-        marks= m;
+public class Student {
+    private String name;
+    private int rollNo;
+    private double marks;
+    private Address address; // Aggregation (has-an Address)
+
+    public Student(String name, int rollNo, double marks, Address address) {
+        this.name = name;
+        this.rollNo = rollNo;
+        this.marks = marks;
+        this.address = address;
     }
-    void displayDetails() {
-        System.out.println("Name    : " + name );
-        System.out.println(" Roll No: " + rollNumber);
-        System.out.println(" Marks  : " + marks);
-    }
-    public static void main(String[] args) {
-        Student s1 = new Student("anu", 101, 85.5);
-        Student s2 = new Student("Arun", 102, 78.0);
-        Student s3 = new Student("Priya", 103, 92.3);
-        s1.displayDetails();
-        s2.displayDetails();
-        s3.displayDetails();
+
+    public void displayStudentDetails() {
+        System.out.println("\n--- Student Details ---");
+        System.out.println("Name: " + name);
+        System.out.println("Roll No: " + rollNo);
+        System.out.println("Marks: " + marks);
+        System.out.println("--- Address ---");
+        address.displayAddress();
     }
 }
